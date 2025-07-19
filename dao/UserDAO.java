@@ -6,14 +6,22 @@ public class UserDAO {
     public boolean regusterUser(User user){  //<-- it used for register and return true for successful register
         String sql = "INSERT INTO user (name,email,password,role) VALUES (?,?,?,?)";
 
-        try(PreparedStatement stmt = DBUtil.getConnection().prepareStatement(sql)){
+        //"Statement.RETURN_GENERATED_KEYS" will give the generated id form sql
+        try(PreparedStatement stmt = DBUtil.getConnection().prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)){
 
-//            stmt.setString(1,user.getName());
-//            stmt.setString(2,user.getEmail);
-//            stmt.setString(3,user.getPassword);
-//            stmt.setString(4,user.getRole);
+            stmt.setString(1,user.getName());
+            stmt.setString(2,user.getEmail());
+            stmt.setString(3,user.getPassword());
+            stmt.setString(4,user.getRole());
 
             int rowInserted = stmt.executeUpdate(); //<-- this check if at list one row is inserted
+            //This get the generated ID and set it into the User object
+            ResultSet rs = stmt.getGeneratedKeys();
+            if(rs.next()){
+                int id = rs.getInt(1);
+                user.setId(id);
+            }
+
             return rowInserted > 0;  //<--- if 1 it will return true else false (no row inserted)
 
         }catch (SQLException e){
@@ -30,12 +38,12 @@ public class UserDAO {
 
             ResultSet row = stmt.executeQuery(); //<-- this hold row sqlite user data based one email
            if(row.next()){//<--- this check if the row have data
-//                return new User(
-//                        row.getInt("id"),
-//                        row.getString("name"),
-//                        row.getString("email"),
-//                        row.getString("password"),
-//                        row.getString("row"));
+               return new User(
+                        row.getInt("id"),
+                        row.getString("name"),
+                        row.getString("email"),
+                        row.getString("password"),
+                        row.getString("role"));
             }
 
         }catch(SQLException e){

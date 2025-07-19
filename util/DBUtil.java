@@ -49,6 +49,17 @@ public class DBUtil {
                 );
             """);
 
+            //Manager table
+            stmt.executeUpdate("""
+                create TABLE IF NOT EXISTS manager(
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    name TEXT NOT NULL,
+                    email TEXT UNIQUE NOT NULL,
+                    password TEXT NOT NULL,
+                    role TEXT NOT NULL
+                );
+            """);
+
             //movies table
             stmt.executeUpdate("""
                 create TABLE IF NOT EXISTS movies(
