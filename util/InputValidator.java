@@ -1,5 +1,5 @@
 public class InputValidator {
-    public static boolean isString(String text){
+    public static boolean isAlph(String text){
         //prevents null pointer crash,ensures it's not blank,confirms only letters
         if(text != null && !text.isEmpty() && text.matches("[a-zA-Z_ ]+")){
             return true;
