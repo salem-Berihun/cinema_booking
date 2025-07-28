@@ -1,1 +1,1 @@
-db_url=jdbc:sqlite:database/cinima.db
+db_url=jdbc:sqlite:database/cinema.db
