@@ -4,13 +4,15 @@ public class User {
     private int id;
     private String name;
     private String email;
-    private String password; // In a real app, store hashed passwords!
+    private String password;
+    private String role;// In a real app, store hashed passwords!
 
-    public User(int id, String name, String email, String password) {
+    public User(int id, String name, String email, String password, String role) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     // --- Getters ---
@@ -28,6 +30,9 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+    public String getRole() {
+        return role;
     }
 
     // --- Setters ---

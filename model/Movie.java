@@ -1,4 +1,3 @@
-import model.Movie;
 import java.util.Objects;
 
 public class Movie {

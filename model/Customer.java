@@ -6,13 +6,13 @@ public class Customer extends User {
     private List<Booking> bookings;
 
     public Customer(int id, String name, String email, String password) {
-        super(id, name, email, password);
+        super(id, name, email, password,"customer");
         this.bookings = new ArrayList<>(); // Initialize an empty list of bookings
     }
 
     // Constructor with existing bookings
     public Customer(int id, String name, String email, String password, List<Booking> bookings) {
-        super(id, name, email, password);
+        super(id, name, email, password,"customer");
         this.bookings = bookings != null ? bookings : new ArrayList<>();
     }
 

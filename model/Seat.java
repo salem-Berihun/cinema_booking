@@ -6,10 +6,25 @@ public class Seat {
     private boolean isBooked;
     private int showtimeId; // Foreign key to link to ShowTime in DB
 
+    // Full constructor
     public Seat(int id, String seatNumber, boolean isBooked, int showtimeId) {
         this.id = id;
         this.seatNumber = seatNumber;
         this.isBooked = isBooked;
+        this.showtimeId = showtimeId;
+    }
+
+    // Constructor without id (e.g., before saving to DB)
+    public Seat(String seatNumber, boolean isBooked, int showtimeId) {
+        this.seatNumber = seatNumber;
+        this.isBooked = isBooked;
+        this.showtimeId = showtimeId;
+    }
+
+    // Constructor from row and column, converts to seatNumber like "A1"
+    public Seat(int row, int col, int showtimeId) {
+        this.seatNumber = String.valueOf((char) ('A' + row)) + (col + 1);
+        this.isBooked = false;
         this.showtimeId = showtimeId;
     }
 
@@ -50,9 +65,9 @@ public class Seat {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Seat)) return false;
         Seat seat = (Seat) o;
-        // Equality based on seat number and showtime, as seat numbers are unique per showtime
+        // Equality based on seat number and showtimeId, since seat numbers are unique per showtime
         return id == seat.id &&
                 showtimeId == seat.showtimeId &&
                 Objects.equals(seatNumber, seat.seatNumber);
