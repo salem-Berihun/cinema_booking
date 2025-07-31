@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/cinema_booking">
+      <sourceFolder url="file://$MODULE_DIR$/cinema_booking/dao" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cinema_booking/database" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cinema_booking/interfaces" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cinema_booking/model" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cinema_booking/service" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cinema_booking/ui" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cinema_booking/util" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cinema_booking/Run" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cinema_booking/config" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/cinema_booking/abstraction" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/cinema_booking/logs" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="sqlite-jdbc-3.49.1.0" level="application" />
+  </component>
+  <component name="TemplatesService">
+    <option name="TEMPLATE_FOLDERS">
+      <list>
+        <option value="$MODULE_DIR$/cinema_booking/temp" />
+      </list>
+    </option>
+  </component>
+</module>
