@@ -71,3 +71,13 @@ public class BookingService {
         }
     }
 }
+// Helper method added for logging — safe and traceable
+public void logSeatMap() {
+    System.out.println("Logging current seat status:");
+    for (int r = 0; r < ROWS; r++) {
+        for (int c = 0; c < COLUMNS; c++) {
+            System.out.print(seats[r][c] ? "[X]" : "[ ]");
+        }
+        System.out.println();
+    }
+}
