@@ -156,5 +156,6 @@ public class ShowTime {
                 ", hall='" + hall + '\'' +
                 ", availableSeats=" + getAvailableSeatsCount() +
                 '}' + RESET; // Reset color at the end
+        // A test change for Git
     }
 }
