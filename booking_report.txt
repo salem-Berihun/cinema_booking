@@ -1,0 +1,45 @@
+-- Report Generated: 2025-08-01 01:36:28 ---
+Report Type: ALL_BOOKINGS
+Total Bookings: 2
+----------------------------------
+Booking{id=1, customerId=1, showtimeId=1, selectedSeatsCount=2, bookingTime=2025-08-01T01:33:50.120961900, totalPrice=21.00}
+Booking{id=2, customerId=2, showtimeId=1, selectedSeatsCount=1, bookingTime=2025-08-01T01:35:09.624618800, totalPrice=10.00}
+----------------------------------
+
+--- Report Generated: 2025-08-01 01:53:58 ---
+Report Type: ALL_BOOKINGS
+Total Bookings: 1
+----------------------------------
+Booking{id=1, customerId=1, showtimeId=1, selectedSeatsCount=2, bookingTime=2025-08-01T01:49:46.049714100, totalPrice=21.00}
+----------------------------------
+
+--- Report Generated: 2025-08-01 01:56:48 ---
+Report Type: ALL_BOOKINGS
+Total Bookings: 1
+----------------------------------
+Booking{id=1, customerId=1, showtimeId=1, selectedSeatsCount=2, bookingTime=2025-08-01T01:55:55.782294300, totalPrice=21.00}
+----------------------------------
+
+--- Report Generated: 2025-08-01 02:21:17 ---
+Report Type: ALL_BOOKINGS
+Total Bookings: 1
+----------------------------------
+Booking{id=1, customerId=1, showtimeId=1, selectedSeatsCount=2, bookingTime=2025-08-01T02:18:56.094359100, totalPrice=21.00}
+----------------------------------
+
+--- Report Generated: 2025-08-01 02:22:44 ---
+Report Type: ALL_BOOKINGS
+Total Bookings: 2
+----------------------------------
+Booking{id=1, customerId=1, showtimeId=1, selectedSeatsCount=2, bookingTime=2025-08-01T02:18:56.094359100, totalPrice=21.00}
+Booking{id=2, customerId=3, showtimeId=4, selectedSeatsCount=1, bookingTime=2025-08-01T02:22:25.511113600, totalPrice=10.00}
+----------------------------------
+
+--- Report Generated: 2025-08-01 02:22:59 ---
+Report Type: ALL_BOOKINGS
+Total Bookings: 2
+----------------------------------
+Booking{id=1, customerId=1, showtimeId=1, selectedSeatsCount=2, bookingTime=2025-08-01T02:18:56.094359100, totalPrice=21.00}
+Booking{id=2, customerId=3, showtimeId=4, selectedSeatsCount=1, bookingTime=2025-08-01T02:22:25.511113600, totalPrice=10.00}
+----------------------------------
+

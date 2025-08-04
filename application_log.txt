@@ -1,0 +1,86 @@
+[2025-08-01 01:33:50] INFO: Application started successfully.
+[2025-08-01 01:34:14] INFO: User alex (Role: customer) registered successfully.
+[2025-08-01 01:34:28] INFO: User alex (ID: 2, Role: customer) logged in.
+[2025-08-01 01:35:09] BOOKING_SUCCESS: ID=2, Customer=alex, Showtime=1, Seats=1, Total=10.00
+[2025-08-01 01:35:09] INFO: BookingService: Booking successful for customer alex (ID: 2)
+[2025-08-01 01:35:56] INFO: User alena (Role: manager) registered successfully.
+[2025-08-01 01:36:08] INFO: User alena (ID: 3, Role: manager) logged in.
+[2025-08-01 01:36:28] INFO: Manager: Booking report generated.
+[2025-08-01 01:37:49] INFO: Manager: Added movie ID 4 - desperate Mrs.Seonju
+[2025-08-01 01:38:50] INFO: Manager: Added showtime ID 4 for movie desperate Mrs.Seonju
+[2025-08-01 01:39:16] ERROR: Invalid input in userFlow menu: null
+[2025-08-01 01:39:30] INFO: User alex (ID: 2, Role: customer) logged in.
+[2025-08-01 01:49:46] INFO: Application started successfully.
+[2025-08-01 01:49:58] ERROR: Login failed for email: alex@gmail.com - Login Failed: Invalid email or password.
+[2025-08-01 01:50:09] ERROR: Login failed for email: alex@gmail.com - Login Failed: Invalid email or password.
+[2025-08-01 01:50:21] INFO: User alex (Role: customer) registered successfully.
+[2025-08-01 01:50:31] INFO: User alex (ID: 2, Role: customer) logged in.
+[2025-08-01 01:51:04] INFO: User alena (Role: manager) registered successfully.
+[2025-08-01 01:51:14] INFO: User alena (ID: 3, Role: manager) logged in.
+[2025-08-01 01:51:57] INFO: Manager: Added movie ID 4 - Desperate Mrs.Seonju
+[2025-08-01 01:53:12] INFO: Manager: Added showtime ID 4 for movie Desperate Mrs.Seonju
+[2025-08-01 01:53:58] INFO: Manager: Booking report generated.
+[2025-08-01 01:55:56] INFO: Application started successfully.
+[2025-08-01 01:56:14] ERROR: Login failed for email: alena@gmail.com - Login Failed: Invalid email or password.
+[2025-08-01 01:56:33] INFO: User alena (Role: manager) registered successfully.
+[2025-08-01 01:56:43] INFO: User alena (ID: 2, Role: manager) logged in.
+[2025-08-01 01:56:48] INFO: Manager: Booking report generated.
+[2025-08-01 01:57:56] INFO: Manager: Added movie ID 4 - Desperate Mrs.Seonju
+[2025-08-01 01:58:46] INFO: Manager: Added showtime ID 4 for movie Desperate Mrs.Seonju
+[2025-08-01 02:08:39] INFO: Application started successfully.
+[2025-08-01 02:09:00] INFO: User alena (Role: manager) registered successfully.
+[2025-08-01 02:09:08] INFO: User alena (ID: 2, Role: manager) logged in.
+[2025-08-01 02:09:53] INFO: Application started successfully.
+[2025-08-01 02:10:14] INFO: User alena (Role: manager) registered successfully.
+[2025-08-01 02:10:23] INFO: User alena (ID: 2, Role: manager) logged in.
+[2025-08-01 02:10:52] INFO: Manager: Added movie ID 4 - Desperate Mrs.Seonju
+[2025-08-01 02:11:23] INFO: Manager: Added showtime ID 4 for movie Desperate Mrs.Seonju
+[2025-08-01 02:11:43] INFO: User alex (Role: customer) registered successfully.
+[2025-08-01 02:11:51] ERROR: Login failed for email: alena@gmail.com - Role mismatch. Logged in as manager, tried to access customer menu.
+[2025-08-01 02:12:04] ERROR: Registration failed for email: alena@gmail.com (Role: customer).
+[2025-08-01 02:12:13] ERROR: Login failed for email: alena@gmail.com - Role mismatch. Logged in as manager, tried to access customer menu.
+[2025-08-01 02:12:29] INFO: User alex (ID: 3, Role: customer) logged in.
+[2025-08-01 02:12:59] INFO: User alena (ID: 2, Role: manager) logged in.
+[2025-08-01 02:13:27] INFO: Manager: Added movie ID 5 - Bad Moms
+[2025-08-01 02:14:28] INFO: Manager: Added showtime ID 5 for movie Bad Moms
+[2025-08-01 02:14:41] ERROR: Invalid input in userFlow menu: null
+[2025-08-01 02:14:53] ERROR: Registration failed for email: alex@gmail.com (Role: customer).
+[2025-08-01 02:15:04] INFO: User alex (ID: 3, Role: customer) logged in.
+[2025-08-01 02:18:56] INFO: Application started successfully.
+[2025-08-01 02:19:13] INFO: User alena (Role: manager) registered successfully.
+[2025-08-01 02:19:21] INFO: User alena (ID: 2, Role: manager) logged in.
+[2025-08-01 02:19:49] INFO: Manager: Added showtime ID 4 for movie Comedy Night Live
+[2025-08-01 02:20:08] INFO: User alex (Role: customer) registered successfully.
+[2025-08-01 02:20:19] INFO: User alex (ID: 3, Role: customer) logged in.
+[2025-08-01 02:21:09] INFO: User alena (ID: 2, Role: manager) logged in.
+[2025-08-01 02:21:17] INFO: Manager: Booking report generated.
+[2025-08-01 02:21:56] ERROR: Invalid input in userFlow menu: null
+[2025-08-01 02:22:07] INFO: User alex (ID: 3, Role: customer) logged in.
+[2025-08-01 02:22:25] BOOKING_SUCCESS: ID=2, Customer=alex, Showtime=4, Seats=1, Total=10.00
+[2025-08-01 02:22:25] INFO: BookingService: Booking successful for customer alex (ID: 2)
+[2025-08-01 02:22:37] INFO: User alena (ID: 2, Role: manager) logged in.
+[2025-08-01 02:22:44] INFO: Manager: Booking report generated.
+[2025-08-01 02:22:59] INFO: Manager: Booking report generated.
+[2025-08-01 02:30:07] INFO: Application started successfully.
+[2025-08-01 02:30:32] INFO: User alena (Role: manager) registered successfully.
+[2025-08-01 02:30:41] INFO: User alena (ID: 2, Role: manager) logged in.
+[2025-08-01 02:54:44] INFO: Application started successfully.
+[2025-08-01 02:55:10] INFO: User alena (Role: manager) registered successfully.
+[2025-08-01 02:55:18] INFO: User alena (ID: 2, Role: manager) logged in.
+[2025-08-01 03:02:20] INFO: Application started successfully.
+[2025-08-01 03:02:38] INFO: User alena (Role: manager) registered successfully.
+[2025-08-01 03:02:47] INFO: User alena (ID: 2, Role: manager) logged in.
+[2025-08-01 03:03:51] INFO: Application started successfully.
+[2025-08-01 03:04:15] INFO: User alena (Role: manager) registered successfully.
+[2025-08-01 03:04:24] INFO: User alena (ID: 2, Role: manager) logged in.
+[2025-08-01 06:06:10] INFO: Application started successfully.
+[2025-08-01 06:06:29] INFO: User alex (Role: customer) registered successfully.
+[2025-08-01 06:06:37] INFO: User alex (ID: 2, Role: customer) logged in.
+[2025-08-01 06:07:38] INFO: User alena (Role: manager) registered successfully.
+[2025-08-01 06:07:46] INFO: User alena (ID: 3, Role: manager) logged in.
+[2025-08-04 00:12:47] INFO: Application started successfully.
+[2025-08-04 00:12:53] INFO: Application started successfully.
+[2025-08-04 00:14:27] INFO: User usman (Role: customer) registered successfully.
+[2025-08-04 00:15:02] INFO: User usman (ID: 2, Role: customer) logged in.
+[2025-08-04 00:19:10] BOOKING_SUCCESS: ID=2, Customer=usman, Showtime=1, Seats=1, Total=10.00
+[2025-08-04 00:19:10] INFO: BookingService: Booking successful for customer usman (ID: 2)
