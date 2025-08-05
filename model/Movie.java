@@ -5,7 +5,7 @@ public class Movie {
     private String title;
     private String description; // Added
     private int durationMinutes;
-    private String genre;       // Added
+    private String genre;       
 
     // Constructor for creating new movies (without ID)
     public Movie(String title, String description, int durationMinutes, String genre) {
