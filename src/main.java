@@ -1,31 +1,29 @@
-// Assuming your main class is in the 'main' package
 
-// Assuming these are the correct packages
-import model.User; // This typically would be for general user (could be parent of Customer/Manager)
-import model.Customer; // Specific customer model (now extends User)
-import model.Manager;  // Specific manager model (now extends User)
-import ui.CustomerMenu; // Your customer UI menu
-import ui.ManagerMenu; // Your manager UI menu
-import util.DBUtil; // Make sure DBUtil is imported
-import util.FileLogger; // Import FileLogger for application startup/shutdown logging
+import model.User; 
+import model.Customer; 
+import model.Manager; 
+import ui.CustomerMenu; 
+import ui.ManagerMenu; 
+import util.DBUtil; 
+import util.FileLogger; 
 
-import ui.Auth; // Your authentication logic
-import util.InputValidator; // Your input validation utility
-import exceptions.UserAuthException; // Import custom UserAuthException
+import ui.Auth; 
+import util.InputValidator; 
+import exceptions.UserAuthException; 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class main {
     private static Scanner sc = new Scanner(System.in);
     private static Auth authInstance = new Auth();
-    private static FileLogger fileLogger = new FileLogger(); // Initialize FileLogger for main
+    private static FileLogger fileLogger = new FileLogger();
 
     public static void main(String[] args) {
 
-        DBUtil.initTable(); // Ensures all tables are created correctly based on the latest DBUtil
-        DBUtil.initData();  // Inserts sample data based on the updated DBUtil
-        fileLogger.logInfo("Application started successfully."); // Log application startup
-        // --- END CRITICAL CHANGE ---
+        DBUtil.initTable(); 
+        DBUtil.initData(); 
+        fileLogger.logInfo("Application started successfully."); 
+        
 
         while (true) {
             try {
@@ -37,22 +35,22 @@ public class main {
                 System.out.print("Enter: ");
 
                 int choice = sc.nextInt();
-                sc.nextLine(); // clear newline
+                sc.nextLine(); 
 
                 if (choice == 1) {
-                    userFlow("customer"); // Pass "customer" role
+                    userFlow("customer"); 
                 } else if (choice == 2) {
-                    userFlow("manager"); // Pass "manager" role
+                    userFlow("manager"); 
                 } else if (choice == 3) {
                     System.out.println("Exiting...");
-                    fileLogger.logInfo("Application is shutting down."); // Log application shutdown
+                    fileLogger.logInfo("Application is shutting down."); 
                     break;
                 } else {
                     System.err.println("Invalid choice. Please enter 1, 2 or 3.");
                 }
             } catch (InputMismatchException e) {
                 System.err.println("Please enter a valid number!");
-                sc.nextLine(); // clear invalid input
+                sc.nextLine(); 
                 fileLogger.logError("Invalid input in main menu: " + e.getMessage());
             }
         }
@@ -79,38 +77,31 @@ public class main {
 
                     User loggedInUser = null;
                     try {
-                        loggedInUser = authInstance.login(email, password); // Auth.login can now throw UserAuthException
-                    } catch (UserAuthException e) { // Catch custom exception
+                        loggedInUser = authInstance.login(email, password);
+                    } catch (UserAuthException e) { 
                         System.err.println("Login Failed: " + e.getMessage());
                         fileLogger.logError("Login failed for email: " + email + " - " + e.getMessage());
-                        continue; // Stay in the login/register loop
+                        continue; 
                     }
 
                     if (loggedInUser != null) {
-                        // Ensure the logged-in user's type matches the expected role
+                        
                         if (!loggedInUser.getUserType().equalsIgnoreCase(role)) {
                             System.err.println("Login Failed: User role mismatch. You logged in as " + loggedInUser.getUserType() + " but selected " + role + " menu.");
                             fileLogger.logError("Login failed for email: " + email + " - Role mismatch. Logged in as " + loggedInUser.getUserType() + ", tried to access " + role + " menu.");
-                            continue; // Stay in the login/register loop
+                            continue;
                         }
 
                         System.out.println("Login Successful!");
                         fileLogger.logInfo("User " + loggedInUser.getFullName() + " (ID: " + loggedInUser.getId() + ", Role: " + loggedInUser.getUserType() + ") logged in.");
-
-                        // --- CRITICAL CHANGE: Leverage polymorphism directly ---
-                        // Call the abstract displayDashboard method.
-                        // At runtime, Java will call the specific implementation
-                        // in either Customer or Manager based on the actual object type.
-                        loggedInUser.displayDashboard(); // This will print the welcome message
-                        // Now, explicitly call the menu based on the actual type of loggedInUser
+                        loggedInUser.displayDashboard();  
                         if (loggedInUser instanceof Customer) {
                             CustomerMenu.customerMainMenu((Customer) loggedInUser);
                         } else if (loggedInUser instanceof Manager) {
-                            ManagerMenu.meno(); // Assuming meno is the main method for ManagerMenu
+                            ManagerMenu.meno(); 
                         }
-                        break; // After the user exits their specific menu, go back to main menu
+                        break; 
                     } else {
-                        // This else block might not be reached if UserAuthException is always thrown for null
                         System.err.println("Login Failed: Invalid credentials or user not found.");
                         fileLogger.logError("Login failed for email: " + email + " - User not found (unexpected null return).");
                     }
