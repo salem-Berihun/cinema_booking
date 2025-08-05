@@ -3,11 +3,10 @@ package model;
 public class Movie {
     private int id;
     private String title;
-    private String description; // Added
+    private String description;
     private int durationMinutes;
-    private String genre;       // Added
+    private String genre;      
 
-    // Constructor for creating new movies (without ID)
     public Movie(String title, String description, int durationMinutes, String genre) {
         this.title = title;
         this.description = description;
@@ -15,7 +14,6 @@ public class Movie {
         this.genre = genre;
     }
 
-    // Constructor for retrieving movies from the database (with ID)
     public Movie(int id, String title, String description, int durationMinutes, String genre) {
         this.id = id;
         this.title = title;
@@ -73,6 +71,5 @@ public class Movie {
                 ", Description: '" + description + '\'' +
                 ", Duration: " + durationMinutes + " mins" +
                 ", Genre: '" + genre + '\'';
-        //git test comment
     }
 }
