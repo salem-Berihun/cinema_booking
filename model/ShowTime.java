@@ -32,6 +32,6 @@ public class ShowTime {
     @Override
     public String toString() {
         return movie.getTitle() + " at " + time + " on " + date + " in Hall " + hall;
-        //test
+        //tests
     }
 }
