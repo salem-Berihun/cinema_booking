@@ -102,7 +102,7 @@ public class Booking {
         return id == booking.id &&
                 Double.compare(booking.totalPrice, totalPrice) == 0 &&
                 Objects.equals(customer, booking.customer) &&
-                Objects.equals(showtime, booking.showtime) && // Changed to showtime
+                Objects.equals(showtime, booking.showtime) && 
                 Objects.equals(selectedSeats, booking.selectedSeats) &&
                 Objects.equals(bookingTime, booking.bookingTime);
     }
