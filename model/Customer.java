@@ -86,7 +86,7 @@ public class Customer extends User {
     @Override
     public String toString() {
         return "Customer{" +
-                super.toString() + // Include User's toString output
+                super.toString() + 
                 ", bookingsCount=" + (bookings != null ? bookings.size() : 0) +
                 '}';
     }
