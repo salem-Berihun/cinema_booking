@@ -131,5 +131,6 @@ public class Booking {
                 ", bookingTime=" + bookingTime +
                 ", totalPrice=" + String.format("%.2f", totalPrice) +
                 '}';
+        //test
     }
 }
