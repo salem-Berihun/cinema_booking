@@ -160,8 +160,7 @@ This project was a collaborative effort. Below are the contributions of each tea
         Developed the User Interface (ui package) including Auth, CustomerMenu, and ManagerMenu.
 
         Implemented utility functionalities (util package) such as DBUtil for database connection management, FileLogger for logging and reporting, and InputValidator for input validation.
-
-        Contributed to the Data Access Object (DAO package) layer, including UserDAO, MovieDAO, ShowTimeDAO, SeatDAO, and BookingDAO.
+        Developed the Data Access Object (DAO package) layer, including UserDAO, MovieDAO, ShowTimeDAO, SeatDAO, and BookingDAO.
 
         Managed database setup, initialization, and ensuring robust data persistence.
 
@@ -169,10 +168,11 @@ This project was a collaborative effort. Below are the contributions of each tea
 
         Developed the Service layer (service package), including BookingService, which encapsulates core business logic and transaction management.
 
-        Implemented abstraction principles throughout the project, particularly through the use of abstract classes and interfaces.
+        Developed the abstraction layer package Implemented abstraction principles throughout the project, particularly through the use of abstract classes and interfaces.
 
     Salem Berihun
 
-        Developed the Model layer (model package), including all core data entities such as User, Customer, Manager, Movie, ShowTime, Seat, and Booking.
+        Developed the Model layer (model package), including all core data entities such as
+        User, Customer, Manager, Movie, ShowTime, Seat, and Booking.
 
         Ensured proper encapsulation, inheritance, and polymorphism within the model classes.
