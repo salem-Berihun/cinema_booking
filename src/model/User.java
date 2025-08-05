@@ -1,16 +1,17 @@
 package model;
 
-import java.util.Objects; // Keep this if you use it for equals/hashCode, otherwise it can be removed if not needed
+import java.util.Objects;
 
-public class User {
+// Make User an abstract class. This means you cannot create a direct 'User' object,
+// only objects of classes that extend User (like Customer or Manager).
+public abstract class User {
     private int id;
-    private String fullName; // <-- Renamed 'name' to 'fullName' for consistency with DB 'full_name'
+    private String fullName;
     private String email;
-    private String password;
-    private String userType; // <-- Renamed 'role' to 'userType' for consistency with DB 'user_type'
-    // In a real app, store hashed passwords!
+    private String password; // In a real app, store hashed passwords!
+    private String userType; // e.g., "customer", "manager"
 
-    // Full constructor - updated parameter names
+    // Constructor for existing users (with ID from DB)
     public User(int id, String fullName, String email, String password, String userType) {
         this.id = id;
         this.fullName = fullName;
@@ -19,21 +20,17 @@ public class User {
         this.userType = userType;
     }
 
-    // Constructor without ID (for new users before DB insert)
+    // Constructor for new users (ID not yet assigned by DB)
     public User(String fullName, String email, String password, String userType) {
-        this.fullName = fullName;
-        this.email = email;
-        this.password = password;
-        this.userType = userType;
+        this(0, fullName, email, password, userType); // Call the full constructor with default ID 0
     }
-
 
     // --- Getters ---
     public int getId() {
         return id;
     }
 
-    public String getFullName() { // <-- Renamed from getName()
+    public String getFullName() {
         return fullName;
     }
 
@@ -45,7 +42,7 @@ public class User {
         return password;
     }
 
-    public String getUserType() { // <-- Renamed from getRole()
+    public String getUserType() {
         return userType;
     }
 
@@ -54,7 +51,7 @@ public class User {
         this.id = id;
     }
 
-    public void setFullName(String fullName) { // <-- Renamed from setName()
+    public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
@@ -66,31 +63,37 @@ public class User {
         this.password = password;
     }
 
-    public void setUserType(String userType) { // <-- Renamed from setRole()
+    public void setUserType(String userType) {
         this.userType = userType;
     }
+
+    // --- Abstract Method ---
+    // This is an abstract method. It has no body here.
+    // Any concrete class that extends User (like Customer or Manager) MUST provide an implementation for this method.
+    // This demonstrates polymorphism (method overriding).
+    public abstract void displayDashboard();
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", fullName='" + fullName + '\'' + // <-- Updated field name
+                ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
-                ", userType='" + userType + '\'' + // <-- Updated field name
+                ", userType='" + userType + '\'' +
                 '}';
     }
 
-    // It's good practice to implement equals and hashCode for model objects
-    // @Override
-    // public boolean equals(Object o) {
-    //     if (this == o) return true;
-    //     if (o == null || getClass() != o.getClass()) return false;
-    //     User user = (User) o;
-    //     return id == user.id && Objects.equals(email, user.email);
-    // }
-    //
-    // @Override
-    // public int hashCode() {
-    //     return Objects.hash(id, email);
-    // }
+    // It's good practice to implement equals and hashCode for model object
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && Objects.equals(email, user.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, email);
+    }
 }
