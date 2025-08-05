@@ -2,16 +2,15 @@ package model;
 
 import java.util.Objects;
 
-// Make User an abstract class. This means you cannot create a direct 'User' object,
-// only objects of classes that extend User (like Customer or Manager).
+
 public abstract class User {
     private int id;
     private String fullName;
     private String email;
-    private String password; // In a real app, store hashed passwords!
-    private String userType; // e.g., "customer", "manager"
+    private String password; 
+    private String userType; 
 
-    // Constructor for existing users (with ID from DB)
+  
     public User(int id, String fullName, String email, String password, String userType) {
         this.id = id;
         this.fullName = fullName;
@@ -20,12 +19,11 @@ public abstract class User {
         this.userType = userType;
     }
 
-    // Constructor for new users (ID not yet assigned by DB)
     public User(String fullName, String email, String password, String userType) {
-        this(0, fullName, email, password, userType); // Call the full constructor with default ID 0
+        this(0, fullName, email, password, userType);
     }
 
-    // --- Getters ---
+   
     public int getId() {
         return id;
     }
@@ -46,7 +44,6 @@ public abstract class User {
         return userType;
     }
 
-    // --- Setters ---
     public void setId(int id) {
         this.id = id;
     }
@@ -67,10 +64,7 @@ public abstract class User {
         this.userType = userType;
     }
 
-    // --- Abstract Method ---
-    // This is an abstract method. It has no body here.
-    // Any concrete class that extends User (like Customer or Manager) MUST provide an implementation for this method.
-    // This demonstrates polymorphism (method overriding).
+   
     public abstract void displayDashboard();
 
     @Override
@@ -83,7 +77,6 @@ public abstract class User {
                 '}';
     }
 
-    // It's good practice to implement equals and hashCode for model objects
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
