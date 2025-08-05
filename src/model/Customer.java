@@ -89,5 +89,7 @@ public class Customer extends User {
                 super.toString() + // Include User's toString output
                 ", bookingsCount=" + (bookings != null ? bookings.size() : 0) +
                 '}';
+        //test comment for git
+
     }
 }
