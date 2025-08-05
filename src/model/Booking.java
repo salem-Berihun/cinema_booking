@@ -12,16 +12,15 @@ public class Booking {
     private List<Seat> selectedSeats;
     private LocalDateTime bookingTime;
     private double totalPrice;
-    private static final double SEAT_PRICE = 10.0; // Example fixed seat price
-
-    // Constructor with ID, Customer, Showtime, Seats, BookingTime
+    private static final double SEAT_PRICE = 10.0;
+    
     public Booking(int id, Customer customer, ShowTime showtime, List<Seat> selectedSeats, LocalDateTime bookingTime) {
         this.id = id;
         this.customer = customer;
         this.showtime = showtime;
         this.selectedSeats = selectedSeats;
         this.bookingTime = bookingTime;
-        this.totalPrice = calculateTotalPrice(); // Calculate price upon creation
+        this.totalPrice = calculateTotalPrice();
     }
 
     // Constructor with existing total price (e.g., when loading from DB)
