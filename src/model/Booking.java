@@ -24,7 +24,7 @@ public class Booking {
         this.totalPrice = calculateTotalPrice(); // Calculate price upon creation
     }
 
-    // Constructor with existing total price (e.g., when loading from DB)
+    // Constructor with existing total price 
     public Booking(int id, Customer customer, ShowTime showtime, List<Seat> selectedSeats, LocalDateTime bookingTime, double totalPrice) {
         this.id = id;
         this.customer = customer;
