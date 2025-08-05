@@ -8,23 +8,23 @@ import java.util.Objects;
 public class Booking {
     private int id;
     private Customer customer;
-    private ShowTime showtime; // Changed from ShowTime to Showtime for consistency
+    private ShowTime showtime;
     private List<Seat> selectedSeats;
     private LocalDateTime bookingTime;
     private double totalPrice;
     private static final double SEAT_PRICE = 10.0; // Example fixed seat price
 
     // Constructor with ID, Customer, Showtime, Seats, BookingTime
-    public Booking(int id, Customer customer, ShowTime showTime, List<Seat> selectedSeats, LocalDateTime bookingTime) {
+    public Booking(int id, Customer customer, ShowTime showtime, List<Seat> selectedSeats, LocalDateTime bookingTime) {
         this.id = id;
         this.customer = customer;
-        this.showtime = showTime;
+        this.showtime = showtime;
         this.selectedSeats = selectedSeats;
         this.bookingTime = bookingTime;
         this.totalPrice = calculateTotalPrice(); // Calculate price upon creation
     }
 
-    // Constructor with existing total price 
+    // Constructor with existing total price (e.g., when loading from DB)
     public Booking(int id, Customer customer, ShowTime showtime, List<Seat> selectedSeats, LocalDateTime bookingTime, double totalPrice) {
         this.id = id;
         this.customer = customer;
@@ -33,6 +33,16 @@ public class Booking {
         this.bookingTime = bookingTime;
         this.totalPrice = totalPrice;
     }
+
+    // Constructor for new bookings (without ID, before DB insert)
+    public Booking(Customer customer, ShowTime showtime, List<Seat> selectedSeats, LocalDateTime bookingTime) {
+        this.customer = customer;
+        this.showtime = showtime;
+        this.selectedSeats = selectedSeats;
+        this.bookingTime = bookingTime;
+        this.totalPrice = calculateTotalPrice(); // Calculate price upon creation
+    }
+
 
     // Getters
     public int getId() {
@@ -43,7 +53,7 @@ public class Booking {
         return customer;
     }
 
-    public ShowTime getShowtime() { // Changed getter name
+    public ShowTime getShowtime() {
         return showtime;
     }
 
@@ -68,7 +78,7 @@ public class Booking {
         this.customer = customer;
     }
 
-    public void setShowtime(ShowTime showtime) { // Changed setter name
+    public void setShowtime(ShowTime showtime) {
         this.showtime = showtime;
     }
 
@@ -85,11 +95,10 @@ public class Booking {
         this.totalPrice = totalPrice;
     }
 
-    /**
-     * Calculates the total price of the booking based on the number of selected seats and a fixed seat price.
-     * @return The calculated total price.
-     */
+
     public double calculateTotalPrice() {
+        // You might want to use the price from the ShowTime object instead of a fixed SEAT_PRICE
+        // return selectedSeats != null ? selectedSeats.size() * showtime.getPrice() : 0.0;
         return selectedSeats != null ? selectedSeats.size() * SEAT_PRICE : 0.0;
     }
 
@@ -98,18 +107,16 @@ public class Booking {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Booking booking = (Booking) o;
-        // Adjusted to use getShowtime() for consistency
         return id == booking.id &&
                 Double.compare(booking.totalPrice, totalPrice) == 0 &&
                 Objects.equals(customer, booking.customer) &&
-                Objects.equals(showtime, booking.showtime) && 
+                Objects.equals(showtime, booking.showtime) &&
                 Objects.equals(selectedSeats, booking.selectedSeats) &&
                 Objects.equals(bookingTime, booking.bookingTime);
     }
 
     @Override
     public int hashCode() {
-        // Adjusted to use getShowtime() for consistency
         return Objects.hash(id, customer, showtime, selectedSeats, bookingTime, totalPrice);
     }
 
@@ -118,10 +125,12 @@ public class Booking {
         return "Booking{" +
                 "id=" + id +
                 ", customerId=" + (customer != null ? customer.getId() : "N/A") +
-                ", showtimeId=" + (showtime != null ? showtime.getId() : "N/A") + // Changed to showtime
+                ", showtimeId=" + (showtime != null ? showtime.getId() : "N/A") +
                 ", selectedSeatsCount=" + (selectedSeats != null ? selectedSeats.size() : 0) +
                 ", bookingTime=" + bookingTime +
                 ", totalPrice=" + String.format("%.2f", totalPrice) +
                 '}';
+        
+
     }
 }
