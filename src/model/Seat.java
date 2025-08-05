@@ -76,12 +76,14 @@ public class Seat {
         this.showtimeId = showtimeId;
     }
 
+
+    //checks for same unique database ID, belong to the same showtime, and have the same seat number
+    //determine if two Seat objects are considered "equal" based on their attributes,
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Seat)) return false;
         Seat seat = (Seat) o;
-        // Equality based on seat number and showtimeId, since seat numbers are unique per showtime
         return id == seat.id &&
                 showtimeId == seat.showtimeId &&
                 Objects.equals(seatNumber, seat.seatNumber);
