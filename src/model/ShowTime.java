@@ -145,7 +145,7 @@ public class ShowTime {
             color = YELLOW;
         } else if (id == 3) {
             color = PURPLE;
-        }
+        }//color
 
 
         return color + "ShowTime{" +
