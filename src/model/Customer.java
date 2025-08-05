@@ -5,18 +5,16 @@ import java.util.List;
 import java.util.Objects;
 
 public class Customer extends User {
-    private List<Booking> bookings; 
+    private List<Booking> bookings;
 
-   
     public Customer(int id, String fullName, String email, String password, String userType) {
-        
         super(id, fullName, email, password, "customer");
-        this.bookings = new ArrayList<>();
+        this.bookings = new ArrayList<>(); 
     }
 
     public Customer(String fullName, String email, String password, String userType) {
         super(fullName, email, password, "customer");
-        this.bookings = new ArrayList<>();
+        this.bookings = new ArrayList<>(); 
     }
 
     public Customer(int id, String fullName, String email, String password, String userType, List<Booking> bookings) {
@@ -47,7 +45,6 @@ public class Customer extends User {
 
     @Override
     public void displayDashboard() {
-        
         System.out.println("\n----- Customer Dashboard -----");
         System.out.println("Welcome, " + getFullName() + " (Customer)!");
     }
@@ -59,19 +56,19 @@ public class Customer extends User {
         // Check superclass equality first
         if (!super.equals(o)) return false;
         Customer customer = (Customer) o;
-        
         return Objects.equals(bookings, customer.bookings);
     }
 
     @Override
     public int hashCode() {
+        // Combine superclass hash code with bookings hash code
         return Objects.hash(super.hashCode(), bookings);
     }
 
     @Override
     public String toString() {
         return "Customer{" +
-                super.toString() + 
+                super.toString() + // Include User's toString output
                 ", bookingsCount=" + (bookings != null ? bookings.size() : 0) +
                 '}';
         //test comment for git
