@@ -7,7 +7,7 @@ import model.ShowTime;
 import model.Booking;
 import model.Seat;
 import util.InputValidator;
-import service.BookingService; // Import the new BookingService
+import service.BookingService; // Import the new BookingServi
 import exceptions.BookingException; // Import custom exception
 
 import java.time.LocalDateTime;
