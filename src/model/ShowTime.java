@@ -98,7 +98,6 @@ public class ShowTime {
     public Seat getSeat(String seatNumber) {
         return seats.get(seatNumber.toUpperCase()); // Use map for direct lookup
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
