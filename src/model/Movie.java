@@ -73,5 +73,6 @@ public class Movie {
                 ", Description: '" + description + '\'' +
                 ", Duration: " + durationMinutes + " mins" +
                 ", Genre: '" + genre + '\'';
+        //git test comment
     }
 }
